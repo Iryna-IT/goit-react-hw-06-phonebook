@@ -9,11 +9,11 @@ import styles from './ContactList.module.css';
 
 class ContactList extends Component {
   static defaultProps = {
-    contacts: [],
+    existContacts: [],
   };
 
   static propTypes = {
-    contacts: PropTypes.arrayOf(
+    existContacts: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
@@ -24,14 +24,14 @@ class ContactList extends Component {
   };
 
   render() {
-    const { contacts } = this.props;
+    const { existContacts } = this.props;
     const { onDelete } = this.props;
-    if (contacts.length === 0) {
+    if (existContacts.length === 0) {
       return <div>There are no contacts</div>;
     } else {
       return (
         <ul className={styles.contact_list}>
-          {contacts.map(contact => (
+          {existContacts.map(contact => (
             <Contact
               key={contact.id}
               id={contact.id}
@@ -85,7 +85,7 @@ class Contact extends Component {
 }
 
 const mapStateToProps = ({ contacts: { items, filter } }) => ({
-  contacts: getContactsListToShow(items, filter),
+  existContacts: getContactsListToShow(items, filter),
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -105,7 +105,6 @@ const mapStateToProps = ({ contacts: { items } }) => ({
 
 const mapDispatchToProps = dispatch => ({
   onAdd: newContact => dispatch(itemsActions.addContact(newContact)),
-  onCheckUnique: name => dispatch(itemsActions.onCheckUnique(name)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
