@@ -2,7 +2,7 @@ import { createReducer } from '@reduxjs/toolkit';
 import filterActions from './filter-actions';
 
 const filter = createReducer('', {
-  [filterActions.filterContacts]: (state, { payload }) => state + payload,
+  [filterActions.filterContacts]: (_, { payload }) => payload,
 });
 
 export default filter;
