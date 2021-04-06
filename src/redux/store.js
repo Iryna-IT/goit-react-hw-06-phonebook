@@ -25,7 +25,7 @@ const middleware = [
 const contactsPersistConfig = {
   key: 'contacts',
   storage,
-  whitelist: ['filter'],
+  blacklist: ['filter'],
 };
 
 const store = configureStore({
