@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const filterContacts = createAction('filterContacts', filter => ({
+const filterContacts = createAction('filter/filterContacts', filter => ({
   payload: filter,
 }));
 
